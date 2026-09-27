@@ -1,363 +1,288 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kadeřnictví - Janatová Žaneta | Vlasové studio Jablonec nad Nisou</title>
-<meta name="description" content="Kadeřnictví - Janatová Žaneta, vlasové studio v Jablonci nad Nisou. Hodnocení 4,6 z 55 recenzí na Googlu. Tel. 483 318 443.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kadeřnictví Janatová Žaneta, Jablonec nad Nisou | objednávky 483 318 443</title>
+<meta name="description" content="Kadeřnictví v Palackého ulici 4460 v Jablonci nad Nisou. Otevřeno pondělí až pátek 8–18, o víkendu zavřeno. Objednávky na telefonu 483 318 443 nebo e-mailem.">
+<meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16120f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --dark:#1c1a19;
-    --dark2:#262321;
-    --gold:#c8a05a;
-    --gold-light:#e0c088;
-    --text:#2c2a28;
-    --muted:#6b6560;
-    --bg:#faf7f2;
-    --white:#ffffff;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Poppins',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    font-size:16px;
-  }
-  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+:root{
+  color-scheme:light dark;
+  --paper:#f5f0e8;
+  --ink:#1d1815;
+  --muted:#5e544a;
+  --rule:#d3c7b6;
+  --tint:#e8dccb;
+  --line:#d2c2ad;
+  --signal:#9a3d20;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --display:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --text:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#16120f;--ink:#efe6d8;--muted:#ab9f90;--rule:#3a322b;--tint:#29211b;--line:#3d3229;--signal:#e0835a}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-wrap:break-word}
+h1,h2,p,ul,dl,figure,blockquote{margin:0}
+h1,h2{font-family:var(--display);font-weight:500;line-height:1}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+abbr[title]{text-decoration:none}
+.nw{white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.frame{max-width:72rem;margin-inline:auto;padding-inline:var(--pad)}
 
-  header{
-    background:var(--dark);
-    color:var(--white);
-    position:sticky;
-    top:0;
-    z-index:100;
-    box-shadow:0 2px 12px rgba(0,0,0,0.25);
-  }
-  .nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 20px;
-    max-width:1100px;
-    margin:0 auto;
-  }
-  .brand{
-    font-family:'Playfair Display',serif;
-    font-size:1.15rem;
-    font-weight:700;
-    color:var(--gold-light);
-    letter-spacing:0.3px;
-  }
-  .brand span{display:block;font-family:'Poppins',sans-serif;font-size:0.7rem;font-weight:400;color:#cfc9c3;letter-spacing:1px;text-transform:uppercase;}
-  .header-call{
-    background:var(--gold);
-    color:var(--dark);
-    padding:9px 16px;
-    border-radius:30px;
-    font-size:0.85rem;
-    font-weight:600;
-    white-space:nowrap;
-  }
-  .header-call:hover{background:var(--gold-light);}
+/* hlavička jako hlavičkový papír */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.15rem 1.5rem;padding-top:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--ink)}
+.brand{font:600 1.125rem/1.15 var(--display)}
+.top-addr{font-size:.9375rem;color:var(--muted)}
 
-  .hero{
-    background:linear-gradient(160deg,var(--dark) 0%,var(--dark2) 100%);
-    color:var(--white);
-    padding:64px 20px 56px;
-    text-align:center;
-  }
-  .hero .eyebrow{
-    color:var(--gold-light);
-    font-size:0.8rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-  .hero h1{
-    font-size:2.1rem;
-    line-height:1.2;
-    margin-bottom:10px;
-  }
-  .hero p.loc{
-    color:#d9d4cd;
-    font-size:1rem;
-    margin-bottom:22px;
-  }
-  .rating-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(200,160,90,0.4);
-    padding:10px 18px;
-    border-radius:40px;
-    margin-bottom:28px;
-  }
-  .rating-badge .stars{color:var(--gold-light);font-size:1rem;letter-spacing:1px;}
-  .rating-badge .score{font-weight:600;font-size:1rem;}
-  .rating-badge .count{color:#c9c3bc;font-size:0.85rem;}
-  .hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    justify-content:center;
-  }
-  .btn{
-    display:inline-block;
-    padding:13px 26px;
-    border-radius:30px;
-    font-weight:600;
-    font-size:0.95rem;
-  }
-  .btn-primary{background:var(--gold);color:var(--dark);}
-  .btn-primary:hover{background:var(--gold-light);}
-  .btn-outline{border:1px solid rgba(255,255,255,0.35);color:var(--white);}
-  .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light);}
+/* úvod */
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:1.4rem;padding-top:2rem;padding-bottom:2.75rem}
+.hero > *{min-width:0}
+.hero h1{font-size:clamp(3.3rem,16.5vw,8rem);line-height:.9;letter-spacing:-.015em}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero h1 .sub{display:block;margin-top:.9rem;font:500 clamp(1.05rem,4.4vw,1.3rem)/1.3 var(--text);letter-spacing:0}
+.lead{font-size:1.125rem;line-height:1.5;max-width:30rem}
+.phone{display:block;text-decoration:none;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:.7rem 0 .85rem}
+.phone-label{display:block;font:600 1rem/1.2 var(--text)}
+.phone-num{display:block;font:600 clamp(2.6rem,13.6vw,5.25rem)/1 var(--display);font-variation-settings:"opsz" 14;color:var(--signal);white-space:nowrap;margin-top:.3rem;letter-spacing:-.01em}
+.phone:hover .phone-num{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.1em}
+.more{display:grid;gap:.5rem;font-size:1rem;max-width:30rem;color:var(--muted)}
+.more a{color:var(--ink);font-weight:500}
 
-  section{padding:56px 20px;}
-  .section-title{
-    text-align:center;
-    font-size:1.7rem;
-    margin-bottom:8px;
-    color:var(--dark);
-  }
-  .section-sub{
-    text-align:center;
-    color:var(--muted);
-    font-size:0.95rem;
-    margin-bottom:36px;
-  }
+/* otevírací doba jako týden v objednávkové knize */
+.hours h2{font:600 1rem/1.2 var(--text);margin-bottom:.6rem}
+.week{width:100%;table-layout:fixed;border-collapse:collapse}
+.week th,.week td{padding:0 .125rem}
+.week th:first-child,.week td:first-child{padding-left:0}
+.week th:last-child,.week td:last-child{padding-right:0}
+.week th{font:500 .9375rem/1 var(--text);color:var(--muted);text-align:left;padding-bottom:.45rem}
+.week th abbr{padding-left:.3rem}
+.week td{vertical-align:top}
+.col{height:11.5rem;display:flex;flex-direction:column;justify-content:space-between;padding:.3rem .25rem .3rem .3rem;border-top:2px solid var(--ink)}
+.open .col{background-color:var(--tint);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(10% - 1px),var(--line) calc(10% - 1px),var(--line) 10%)}
+.open .col span{font:600 clamp(1.05rem,4.6vw,1.6rem)/1 var(--display)}
+.closed .col{border-top:1px solid var(--rule);justify-content:flex-end;align-items:flex-start;background-image:repeating-linear-gradient(135deg,var(--rule) 0,var(--rule) 1px,transparent 1px,transparent 8px)}
+.closed .col span{writing-mode:vertical-rl;transform:rotate(180deg);font:500 .875rem/1 var(--text);color:var(--muted);background:var(--paper);padding:.35rem .1rem}
+.hours .note{margin-top:.9rem;font-size:1rem;color:var(--muted);max-width:30rem}
 
-  .services-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:18px;
-    max-width:1100px;
-    margin:0 auto;
-  }
-  @media(min-width:640px){
-    .services-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media(min-width:900px){
-    .services-grid{grid-template-columns:repeat(3,1fr);}
-  }
-  .service-card{
-    background:var(--white);
-    border-radius:12px;
-    padding:26px 22px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.06);
-    border-top:3px solid var(--gold);
-  }
-  .service-card h3{
-    font-size:1.05rem;
-    margin-bottom:8px;
-    color:var(--dark);
-  }
-  .service-card p{
-    font-size:0.9rem;
-    color:var(--muted);
-  }
+/* sekce: štítek vlevo, obsah vpravo */
+.band{border-top:1px solid var(--ink);padding-top:2.25rem;padding-bottom:2.75rem}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem 3rem}
+.split > *{min-width:0}
+.split h2{font-size:clamp(2rem,7.5vw,2.9rem);line-height:1.02;max-width:12ch}
+.aside p{margin-top:.9rem;max-width:22rem}
 
-  .hours-wrap{
-    background:var(--dark2);
-    color:var(--white);
-    border-radius:16px;
-    padding:36px 28px;
-    max-width:700px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .hours-wrap h2{color:var(--white);margin-bottom:14px;}
-  .hours-wrap p{color:#d9d4cd;font-size:0.95rem;margin-bottom:20px;}
+/* co říct při objednání */
+.prep{list-style:none;padding:0;display:grid;grid-template-columns:minmax(0,1fr);column-gap:2.5rem}
+.prep li{min-width:0;padding-top:.85rem;padding-bottom:1rem;border-top:1px solid var(--rule)}
+.prep strong{display:block;font:600 1.375rem/1.2 var(--display);margin-bottom:.25rem}
 
-  .contact-grid{
-    display:grid;
-    gap:16px;
-    max-width:700px;
-    margin:0 auto;
-  }
-  .contact-item{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    background:var(--white);
-    border-radius:12px;
-    padding:20px 22px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.06);
-  }
-  .contact-icon{
-    flex-shrink:0;
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    background:var(--gold);
-    color:var(--dark);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.1rem;
-    font-weight:700;
-  }
-  .contact-text .label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
-  .contact-text .value{font-size:1.02rem;font-weight:600;color:var(--dark);}
-  .contact-item:hover .value{color:var(--gold);}
+/* recenze */
+.rating strong{font-weight:600}
+.q{padding-top:1.4rem;padding-bottom:1.5rem;border-top:1px solid var(--rule)}
+.q:first-child{border-top:0;padding-top:0}
+.q .when{font:italic 500 1.25rem/1.1 var(--display);margin-bottom:.5rem}
+.q blockquote{font-size:1.125rem;line-height:1.55;max-width:38rem}
+.q.lead-q blockquote{font:400 clamp(1.3rem,4.8vw,1.8rem)/1.38 var(--display);max-width:42rem}
+.q figcaption{margin-top:.65rem;font-weight:600}
 
-  .map-cta{
-    text-align:center;
-    margin-top:28px;
-  }
+/* adresa */
+.addr{font:500 clamp(2rem,8.6vw,3.4rem)/1.05 var(--display);font-variation-settings:"opsz" 18}
+.go{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem;margin-bottom:1.75rem}
+.go a{display:inline-flex;align-items:center;min-height:2.875rem;padding:0 1.1rem;border:1px solid var(--ink);border-radius:2px;text-decoration:none;font-weight:600}
+.go a:first-child{background:var(--ink);color:var(--paper)}
+.go a:hover{text-decoration:underline}
+.facts{display:grid;grid-template-columns:minmax(0,1fr);max-width:34rem}
+.facts dt{color:var(--muted);font-size:.875rem;margin-top:.7rem}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:0;min-width:0}
 
-  footer{
-    background:var(--dark);
-    color:#bdb7b0;
-    text-align:center;
-    padding:30px 20px 22px;
-    font-size:0.85rem;
-  }
-  footer .foot-name{color:var(--gold-light);font-weight:600;margin-bottom:6px;}
-  footer .credit{
-    margin-top:16px;
-    font-size:0.75rem;
-    color:#7a7570;
-  }
+.foot{border-top:1px solid var(--ink);padding-top:1.1rem;padding-bottom:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 2rem;font-size:.875rem;color:var(--muted)}
+
+@media (min-width:30rem){
+  .facts{grid-template-columns:minmax(0,7rem) minmax(0,1fr);gap:.55rem 1rem}
+  .facts dt{font-size:inherit;margin-top:0}
+}
+@media (min-width:40rem){
+  .prep{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .col{height:14rem}
+}
+@media (min-width:56rem){
+  .hero{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"h1 hours" "lead hours" "phone hours" "more hours";column-gap:4rem;row-gap:1.4rem;padding-top:3rem;padding-bottom:3.75rem}
+  .hero h1{grid-area:h1;margin-bottom:.75rem}
+  .lead{grid-area:lead}
+  .phone{grid-area:phone;justify-self:start;padding-right:1.5rem}
+  .more{grid-area:more}
+  .hours{grid-area:hours;align-self:end}
+  .col{height:22rem}
+  .split{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .band{padding-top:3rem;padding-bottom:3.5rem}
+}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HairSalon",
   "name": "Kadeřnictví - Janatová Žaneta",
-  "telephone": "+420483318443",
+  "telephone": "+420 483 318 443",
   "email": "janatovazaneta@seznam.cz",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Palackého 4460/7",
+    "streetAddress": "Palackého 4460",
     "postalCode": "466 01",
     "addressLocality": "Jablonec nad Nisou",
     "addressCountry": "CZ"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.6",
-    "reviewCount": "55",
-    "bestRating": "5"
-  }
+  "geo": {"@type": "GeoCoordinates", "latitude": 50.728132, "longitude": 15.170219},
+  "hasMap": "https://www.google.com/maps/place/Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta/data=!4m7!3m6!1s0x470ecad1552d6d53:0x5e9fe2385f3e83c0!8m2!3d50.728132!4d15.1702194!16s%2Fg%2F1tjrnpxy!19sChIJU20tVdHKDkcRwIM-Xzjin14",
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }],
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "bestRating": "5", "worstRating": "1", "ratingCount": "55"},
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Bezbariérový vstup", "value": true}
+  ]
 }
 </script>
 </head>
 <body>
 
-<header>
-  <div class="nav-inner">
-    <div class="brand">Janatová Žaneta<span>Vlasové studio</span></div>
-    <a class="header-call" href="tel:+420483318443">Zavolat</a>
-  </div>
+<header class="top frame">
+  <span class="brand">Kadeřnictví – Janatová Žaneta</span>
+  <span class="top-addr">Palackého 4460, Jablonec nad Nisou</span>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="eyebrow">Vlasové studio · Jablonec nad Nisou</div>
-    <h1>Kadeřnictví - Janatová Žaneta</h1>
-    <p class="loc">Péče o vlasy v srdci Jablonce nad Nisou</p>
-    <div class="rating-badge">
-      <span class="stars">★★★★★</span>
-      <span class="score">4,6</span>
-      <span class="count">(55 recenzí na Googlu)</span>
+<main>
+
+<section class="hero frame" aria-labelledby="titulek">
+  <h1 id="titulek">Chodí se sem <em>léta.</em><span class="sub">Kadeřnictví v&nbsp;Jablonci nad Nisou</span></h1>
+
+  <p class="lead">V&nbsp;Palackého ulici, otevřeno ve všední dny. Objednat se můžete telefonem i&nbsp;<span class="nw">e-mailem</span>.</p>
+
+  <a class="phone" href="tel:+420483318443">
+    <span class="phone-label">Objednávky u&nbsp;Žanety</span>
+    <span class="phone-num">483 318 443</span>
+  </a>
+
+  <div class="more">
+    <p>E-mail: <a href="mailto:janatovazaneta@seznam.cz">janatovazaneta@seznam.cz</a></p>
+    <p><a href="#recenze">42 z&nbsp;55 hodnocení na Googlu je pět hvězd.</a></p>
+  </div>
+
+  <div class="hours">
+    <h2>Otevírací doba</h2>
+    <table class="week">
+      <thead>
+        <tr>
+          <th scope="col"><abbr title="pondělí">Po</abbr></th>
+          <th scope="col"><abbr title="úterý">Út</abbr></th>
+          <th scope="col"><abbr title="středa">St</abbr></th>
+          <th scope="col"><abbr title="čtvrtek">Čt</abbr></th>
+          <th scope="col"><abbr title="pátek">Pá</abbr></th>
+          <th scope="col"><abbr title="sobota">So</abbr></th>
+          <th scope="col"><abbr title="neděle">Ne</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="open"><div class="col"><span>8</span><i class="sr">–</i><span>18</span></div></td>
+          <td class="open"><div class="col"><span>8</span><i class="sr">–</i><span>18</span></div></td>
+          <td class="open"><div class="col"><span>8</span><i class="sr">–</i><span>18</span></div></td>
+          <td class="open"><div class="col"><span>8</span><i class="sr">–</i><span>18</span></div></td>
+          <td class="open"><div class="col"><span>8</span><i class="sr">–</i><span>18</span></div></td>
+          <td class="closed"><div class="col"><span>zavřeno</span></div></td>
+          <td class="closed"><div class="col"><span>zavřeno</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">Každý všední den od osmi do šesti, sobota a&nbsp;neděle zavřeno. <span class="nw">E-mail</span> můžete poslat i&nbsp;o&nbsp;víkendu.</p>
+  </div>
+</section>
+
+<section class="band frame" aria-labelledby="objednani">
+  <div class="split">
+    <h2 id="objednani">Co říct, když se objednáváte</h2>
+    <ul class="prep">
+      <li><p><strong>Jak dlouhé máte vlasy.</strong> Krátké, po ramena, nebo dlouhé. Podle toho se odhadne, kolik času si na vás vyhradit.</p></li>
+      <li><p><strong>Jestli půjde o&nbsp;barvu.</strong> Stačí ano, nebo ne. A&nbsp;když ano, tak jestli jen odrosty, nebo nová barva.</p></li>
+      <li><p><strong>Kolik máte času.</strong> Kdy můžete přijít a&nbsp;kdy musíte odejít. Poslední šance v&nbsp;týdnu je pátek, pak je až do pondělí zavřeno.</p></li>
+      <li><p><strong>Ke komu chcete.</strong> Pokud už máte svou kadeřnici, řekněte její jméno. A&nbsp;jestli přijdete i&nbsp;s&nbsp;dítětem, řekněte to hned.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band frame" id="recenze" aria-labelledby="recenze-h">
+  <div class="split">
+    <div class="aside">
+      <h2 id="recenze-h">Z&nbsp;recenzí na Googlu</h2>
+      <p class="rating"><strong>42 z&nbsp;55</strong> hodnocení je pět hvězd, průměr 4,6. Zbylých třináct: devětkrát čtyři hvězdy, dvakrát tři a&nbsp;dvakrát jedna.</p>
+      <p><a href="https://www.google.com/maps/place/Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta/data=!4m7!3m6!1s0x470ecad1552d6d53:0x5e9fe2385f3e83c0!8m2!3d50.728132!4d15.1702194!16s%2Fg%2F1tjrnpxy!19sChIJU20tVdHKDkcRwIM-Xzjin14" target="_blank" rel="noopener">Všechny recenze v&nbsp;Mapách Google</a></p>
     </div>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="tel:+420483318443">Objednat se telefonicky</a>
-      <a class="btn btn-outline" href="#kontakt">Kontakt a mapa</a>
+    <div class="quotes">
+      <figure class="q lead-q">
+        <p class="when">Několik let, i&nbsp;se synem</p>
+        <blockquote>Mám tam se synem svou stálou kadeřnici, ke které chodíme už několik let a&nbsp;vždy se nám snaží vyhovět jak s&nbsp;objednáním tak s&nbsp;požadavky, stále má příjemné chování a&nbsp;je vždy usměvavá. Prostředí příjemné a&nbsp;ostatní kolegové působí také ochotně.</blockquote>
+        <figcaption>Marta V.</figcaption>
+      </figure>
+      <figure class="q">
+        <p class="when">U&nbsp;Žanety</p>
+        <blockquote>Super prostředí, paní Žaneta příjemná a&nbsp;vychází ve všech směrech vstříc.</blockquote>
+        <figcaption>Martina M.</figcaption>
+      </figure>
+      <figure class="q">
+        <p class="when">Už léta</p>
+        <blockquote>Do tohoto kadeřnictví k&nbsp;paní Martě chodím již léta. Jsem velice spokojená jak s&nbsp;vytvořeným účesem,tak i&nbsp;se vstřícností a&nbsp;laskavostí všech.</blockquote>
+        <figcaption>Jana P.</figcaption>
+      </figure>
+      <figure class="q">
+        <p class="when">Nikam jinam</p>
+        <blockquote>Skvělé kadeřnictví, několik let nechodíme jinam</blockquote>
+        <figcaption>Jarmila K.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section id="sluzby">
-  <div class="container">
-    <h2 class="section-title">Naše služby</h2>
-    <p class="section-sub">Přehled typických úkonů vlasového studia</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Dámské střihy</h3>
-        <p>Střih dle typu vlasů a tvaru obličeje, včetně konzultace a stylingu.</p>
-      </div>
-      <div class="service-card">
-        <h3>Pánské a dětské střihy</h3>
-        <p>Klasické i moderní střihy pro pány a nejmenší klienty.</p>
-      </div>
-      <div class="service-card">
-        <h3>Barvení a melír</h3>
-        <p>Jednobarevné aplikace, melír, ombré a další barevné techniky.</p>
-      </div>
-      <div class="service-card">
-        <h3>Regenerační péče</h3>
-        <p>Vlasové kúry a ošetření pro zdravý vzhled a strukturu vlasů.</p>
-      </div>
-      <div class="service-card">
-        <h3>Styling a úprava</h3>
-        <p>Foukaná, žehlení, trvalá a úprava vlasů na běžné i výjimečné příležitosti.</p>
-      </div>
-      <div class="service-card">
-        <h3>Společenské a svatební účesy</h3>
-        <p>Účesy na míru pro svatby, plesy a jiné společenské akce.</p>
-      </div>
+<section class="band frame" aria-labelledby="kde">
+  <div class="split">
+    <h2 id="kde">Kudy k&nbsp;nám</h2>
+    <div>
+      <p class="addr">Palackého 4460,<br> 466&nbsp;01 Jablonec nad Nisou&nbsp;1</p>
+      <p class="go">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=50.728132%2C15.170219" target="_blank" rel="noopener">Navigovat sem</a>
+        <a href="https://www.google.com/maps/place/Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta/data=!4m7!3m6!1s0x470ecad1552d6d53:0x5e9fe2385f3e83c0!8m2!3d50.728132!4d15.1702194!16s%2Fg%2F1tjrnpxy!19sChIJU20tVdHKDkcRwIM-Xzjin14" target="_blank" rel="noopener">Otevřít v&nbsp;Mapách Google</a>
+      </p>
+      <dl class="facts">
+        <dt>Objednávky</dt><dd><a href="tel:+420483318443">483 318 443</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:janatovazaneta@seznam.cz">janatovazaneta@seznam.cz</a></dd>
+        <dt>Otevřeno</dt><dd>Po–Pá 8–18, So a&nbsp;Ne zavřeno</dd>
+        <dt>Vstup</dt><dd>Bezbariérový</dd>
+        <dt>GPS</dt><dd>50.728132, 15.170219</dd>
+      </dl>
     </div>
   </div>
 </section>
 
-<section id="oteviraci-doba">
-  <div class="container">
-    <div class="hours-wrap">
-      <h2>Otevírací doba</h2>
-      <p>Aktuální otevírací dobu a volné termíny si prosím ověřte telefonicky nebo e-mailem – rádi vám vyjdeme vstříc.</p>
-      <a class="btn btn-primary" href="tel:+420483318443">483 318 443</a>
-    </div>
-  </div>
-</section>
+</main>
 
-<section id="kontakt">
-  <div class="container">
-    <h2 class="section-title">Kontakt</h2>
-    <p class="section-sub">Najdete nás v Jablonci nad Nisou</p>
-    <div class="contact-grid">
-      <a class="contact-item" href="tel:+420483318443">
-        <div class="contact-icon">☏</div>
-        <div class="contact-text">
-          <div class="label">Telefon</div>
-          <div class="value">483 318 443</div>
-        </div>
-      </a>
-      <a class="contact-item" href="mailto:janatovazaneta@seznam.cz">
-        <div class="contact-icon">✉</div>
-        <div class="contact-text">
-          <div class="label">E-mail</div>
-          <div class="value">janatovazaneta@seznam.cz</div>
-        </div>
-      </a>
-      <a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta%2C+Palack%C3%A9ho+4460%2F7%2C+466+01+Jablonec+nad+Nisou" target="_blank" rel="noopener">
-        <div class="contact-icon">📍</div>
-        <div class="contact-text">
-          <div class="label">Adresa</div>
-          <div class="value">Palackého 4460/7, 466 01 Jablonec nad Nisou</div>
-        </div>
-      </a>
-    </div>
-    <div class="map-cta">
-      <a class="btn btn-outline" style="border-color:#c8a05a;color:#1c1a19;" href="https://www.google.com/maps/search/?api=1&query=Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta%2C+Palack%C3%A9ho+4460%2F7%2C+466+01+Jablonec+nad+Nisou" target="_blank" rel="noopener">Zobrazit na Google Maps</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-name">Kadeřnictví - Janatová Žaneta</div>
-  <div>Palackého 4460/7, 466 01 Jablonec nad Nisou · 483 318 443</div>
-  <div class="credit">Ukázka webu — Vladislav Zachariev</div>
+<footer class="foot frame">
+  <p>Kadeřnictví – Janatová Žaneta, Palackého 4460, Jablonec nad Nisou</p>
+  <p>Ukázka webu — Vladislav Zachariev</p>
 </footer>
 
 </body>
