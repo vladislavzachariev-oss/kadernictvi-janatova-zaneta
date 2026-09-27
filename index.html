@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kadeřnictví - Janatová Žaneta | Vlasové studio Jablonec nad Nisou</title>
+<meta name="description" content="Kadeřnictví - Janatová Žaneta, vlasové studio v Jablonci nad Nisou. Hodnocení 4,6 z 55 recenzí na Googlu. Tel. 483 318 443.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#1c1a19;
+    --dark2:#262321;
+    --gold:#c8a05a;
+    --gold-light:#e0c088;
+    --text:#2c2a28;
+    --muted:#6b6560;
+    --bg:#faf7f2;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  header{
+    background:var(--dark);
+    color:var(--white);
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 12px rgba(0,0,0,0.25);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .brand{
+    font-family:'Playfair Display',serif;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--gold-light);
+    letter-spacing:0.3px;
+  }
+  .brand span{display:block;font-family:'Poppins',sans-serif;font-size:0.7rem;font-weight:400;color:#cfc9c3;letter-spacing:1px;text-transform:uppercase;}
+  .header-call{
+    background:var(--gold);
+    color:var(--dark);
+    padding:9px 16px;
+    border-radius:30px;
+    font-size:0.85rem;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .header-call:hover{background:var(--gold-light);}
+
+  .hero{
+    background:linear-gradient(160deg,var(--dark) 0%,var(--dark2) 100%);
+    color:var(--white);
+    padding:64px 20px 56px;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    color:var(--gold-light);
+    font-size:0.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:2.1rem;
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .hero p.loc{
+    color:#d9d4cd;
+    font-size:1rem;
+    margin-bottom:22px;
+  }
+  .rating-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(200,160,90,0.4);
+    padding:10px 18px;
+    border-radius:40px;
+    margin-bottom:28px;
+  }
+  .rating-badge .stars{color:var(--gold-light);font-size:1rem;letter-spacing:1px;}
+  .rating-badge .score{font-weight:600;font-size:1rem;}
+  .rating-badge .count{color:#c9c3bc;font-size:0.85rem;}
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .btn-primary{background:var(--gold);color:var(--dark);}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-outline{border:1px solid rgba(255,255,255,0.35);color:var(--white);}
+  .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light);}
+
+  section{padding:56px 20px;}
+  .section-title{
+    text-align:center;
+    font-size:1.7rem;
+    margin-bottom:8px;
+    color:var(--dark);
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.95rem;
+    margin-bottom:36px;
+  }
+
+  .services-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  @media(min-width:640px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:900px){
+    .services-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .service-card{
+    background:var(--white);
+    border-radius:12px;
+    padding:26px 22px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.06);
+    border-top:3px solid var(--gold);
+  }
+  .service-card h3{
+    font-size:1.05rem;
+    margin-bottom:8px;
+    color:var(--dark);
+  }
+  .service-card p{
+    font-size:0.9rem;
+    color:var(--muted);
+  }
+
+  .hours-wrap{
+    background:var(--dark2);
+    color:var(--white);
+    border-radius:16px;
+    padding:36px 28px;
+    max-width:700px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .hours-wrap h2{color:var(--white);margin-bottom:14px;}
+  .hours-wrap p{color:#d9d4cd;font-size:0.95rem;margin-bottom:20px;}
+
+  .contact-grid{
+    display:grid;
+    gap:16px;
+    max-width:700px;
+    margin:0 auto;
+  }
+  .contact-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--white);
+    border-radius:12px;
+    padding:20px 22px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.06);
+  }
+  .contact-icon{
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.1rem;
+    font-weight:700;
+  }
+  .contact-text .label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+  .contact-text .value{font-size:1.02rem;font-weight:600;color:var(--dark);}
+  .contact-item:hover .value{color:var(--gold);}
+
+  .map-cta{
+    text-align:center;
+    margin-top:28px;
+  }
+
+  footer{
+    background:var(--dark);
+    color:#bdb7b0;
+    text-align:center;
+    padding:30px 20px 22px;
+    font-size:0.85rem;
+  }
+  footer .foot-name{color:var(--gold-light);font-weight:600;margin-bottom:6px;}
+  footer .credit{
+    margin-top:16px;
+    font-size:0.75rem;
+    color:#7a7570;
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kadeřnictví - Janatová Žaneta",
+  "telephone": "+420483318443",
+  "email": "janatovazaneta@seznam.cz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Palackého 4460/7",
+    "postalCode": "466 01",
+    "addressLocality": "Jablonec nad Nisou",
+    "addressCountry": "CZ"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "55",
+    "bestRating": "5"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">Janatová Žaneta<span>Vlasové studio</span></div>
+    <a class="header-call" href="tel:+420483318443">Zavolat</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Vlasové studio · Jablonec nad Nisou</div>
+    <h1>Kadeřnictví - Janatová Žaneta</h1>
+    <p class="loc">Péče o vlasy v srdci Jablonce nad Nisou</p>
+    <div class="rating-badge">
+      <span class="stars">★★★★★</span>
+      <span class="score">4,6</span>
+      <span class="count">(55 recenzí na Googlu)</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:+420483318443">Objednat se telefonicky</a>
+      <a class="btn btn-outline" href="#kontakt">Kontakt a mapa</a>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="container">
+    <h2 class="section-title">Naše služby</h2>
+    <p class="section-sub">Přehled typických úkonů vlasového studia</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Dámské střihy</h3>
+        <p>Střih dle typu vlasů a tvaru obličeje, včetně konzultace a stylingu.</p>
+      </div>
+      <div class="service-card">
+        <h3>Pánské a dětské střihy</h3>
+        <p>Klasické i moderní střihy pro pány a nejmenší klienty.</p>
+      </div>
+      <div class="service-card">
+        <h3>Barvení a melír</h3>
+        <p>Jednobarevné aplikace, melír, ombré a další barevné techniky.</p>
+      </div>
+      <div class="service-card">
+        <h3>Regenerační péče</h3>
+        <p>Vlasové kúry a ošetření pro zdravý vzhled a strukturu vlasů.</p>
+      </div>
+      <div class="service-card">
+        <h3>Styling a úprava</h3>
+        <p>Foukaná, žehlení, trvalá a úprava vlasů na běžné i výjimečné příležitosti.</p>
+      </div>
+      <div class="service-card">
+        <h3>Společenské a svatební účesy</h3>
+        <p>Účesy na míru pro svatby, plesy a jiné společenské akce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="oteviraci-doba">
+  <div class="container">
+    <div class="hours-wrap">
+      <h2>Otevírací doba</h2>
+      <p>Aktuální otevírací dobu a volné termíny si prosím ověřte telefonicky nebo e-mailem – rádi vám vyjdeme vstříc.</p>
+      <a class="btn btn-primary" href="tel:+420483318443">483 318 443</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="container">
+    <h2 class="section-title">Kontakt</h2>
+    <p class="section-sub">Najdete nás v Jablonci nad Nisou</p>
+    <div class="contact-grid">
+      <a class="contact-item" href="tel:+420483318443">
+        <div class="contact-icon">☏</div>
+        <div class="contact-text">
+          <div class="label">Telefon</div>
+          <div class="value">483 318 443</div>
+        </div>
+      </a>
+      <a class="contact-item" href="mailto:janatovazaneta@seznam.cz">
+        <div class="contact-icon">✉</div>
+        <div class="contact-text">
+          <div class="label">E-mail</div>
+          <div class="value">janatovazaneta@seznam.cz</div>
+        </div>
+      </a>
+      <a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta%2C+Palack%C3%A9ho+4460%2F7%2C+466+01+Jablonec+nad+Nisou" target="_blank" rel="noopener">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">
+          <div class="label">Adresa</div>
+          <div class="value">Palackého 4460/7, 466 01 Jablonec nad Nisou</div>
+        </div>
+      </a>
+    </div>
+    <div class="map-cta">
+      <a class="btn btn-outline" style="border-color:#c8a05a;color:#1c1a19;" href="https://www.google.com/maps/search/?api=1&query=Kade%C5%99nictv%C3%AD+-+Janatov%C3%A1+%C5%BDaneta%2C+Palack%C3%A9ho+4460%2F7%2C+466+01+Jablonec+nad+Nisou" target="_blank" rel="noopener">Zobrazit na Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-name">Kadeřnictví - Janatová Žaneta</div>
+  <div>Palackého 4460/7, 466 01 Jablonec nad Nisou · 483 318 443</div>
+  <div class="credit">Ukázka webu — Vladislav Zachariev</div>
+</footer>
+
+</body>
+</html>
